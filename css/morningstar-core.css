@@ -1,0 +1,120 @@
+
+/* 
+ * --- ASHRAF MORNINGSTAR ULTRA-PREMIUM UI SYSTEM (2026) --- 
+ * This system injects a high-end, futuristic, and professional look 
+ * into every project, featuring neo-glassmorphism and dynamic animations.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono&display=swap');
+
+:root {
+    --p-accent: #00f2ff;
+    --s-accent: #7000ff;
+    --bg-dark: #05050a;
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glow: 0 0 15px rgba(0, 242, 255, 0.4);
+    --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+body {
+    background-color: var(--bg-dark) !important;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(112, 0, 255, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(0, 242, 255, 0.15) 0px, transparent 50%) !important;
+    color: #ffffff !important;
+    font-family: 'Outfit', sans-serif !important;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Futuristic Neo-Glass Buttons */
+button, .btn, .cta, .nav-item, input[type="submit"] {
+    position: relative;
+    background: var(--glass) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 12px !important;
+    padding: 14px 28px !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: var(--transition) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button::before, .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: 0.5s;
+}
+
+button:hover::before, .btn:hover::before {
+    left: 100%;
+}
+
+button:hover, .btn:hover {
+    transform: scale(1.08) translateY(-3px) !important;
+    background: rgba(0, 242, 255, 0.1) !important;
+    border-color: var(--p-accent) !important;
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.3) !important;
+    color: var(--p-accent) !important;
+}
+
+button:active, .btn:active {
+    transform: scale(0.95) !important;
+}
+
+/* Zoom animations for sections/cards */
+.card, section, .project-item, img {
+    transition: var(--transition) !important;
+    border-radius: 20px !important;
+    border: 1px solid transparent;
+}
+
+.card:hover, section:hover, .project-item:hover {
+    transform: scale(1.02) !important;
+    border-color: var(--glass-border) !important;
+    background: var(--glass) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Holographic Text Effects */
+h1, h2, .title {
+    background: linear-gradient(135deg, #fff 0%, var(--p-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    filter: drop-shadow(var(--glow));
+}
+
+/* Custom Selection */
+::selection {
+    background: var(--p-accent);
+    color: var(--bg-dark);
+}
+
+/* Performance Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--s-accent), var(--p-accent));
+    border-radius: 10px;
+}
